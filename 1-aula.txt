@@ -1,0 +1,62 @@
+Atores
+  Cliente (Usuário que faz compras no site)
+  Administrador (Gerencia o sistema)
+  Sistema de Pagamento (Ator externo que processa pagamentos)
+  Transportadora (Ator externo responsável pelas entregas)
+
+📌 Casos de Uso por Ator
+  🛒 Cliente
+    Criar Conta - ✔️
+    Fazer Login - ✔️
+    Navegar pelos Produtos - ✔️
+    Adicionar Produto ao Carrinho  - ✔️
+    Remover Produto do Carrinho - ✔️
+    Finalizar Compra - ✔️
+    Escolher Forma de Pagamento - ✔️
+    Aplicar Cupom de Desconto - ✔️
+    Acompanhar Pedido - ✔️
+    Avaliar Produto - ✔️
+    Gerenciar Endereços de Entrega - ✔️
+    Solicitar Troca/Devolução - ✔️
+    Contatar Suporte - ✔️
+    📌 Relações:
+      "Finalizar Compra" inclui "Escolher Forma de Pagamento"
+      "Finalizar Compra" inclui "Aplicar Cupom de Desconto"
+      "Acompanhar Pedido" se comunica com "Transportadora"
+
+🛠 Administrador
+  Cadastrar Produtos - ✔️
+  Atualizar Produtos - ✔️
+  Excluir Produtos - ✔️
+  Gerenciar Pedidos - ✔️
+  Gerenciar Usuários - ✔️
+  Gerenciar Estoque - ✔️
+  Processar Trocas e Devoluções - ✔️
+  Gerar Relatórios de Vendas - ✔️
+  Configurar Sistema - ✔️
+  📌 Relações:
+    "Gerenciar Pedidos" inclui "Processar Trocas e Devoluções"
+    "Gerenciar Estoque" inclui "Cadastrar Produtos"
+
+💳 Sistema de Pagamento (Ator Externo)
+  Processar Pagamento - ✔️
+  Validar Transação - ✔️
+  Emitir Reembolso - ✔️
+  📌 Relações:
+    "Finalizar Compra" se comunica com "Processar Pagamento"
+
+🚚 Transportadora (Ator Externo)
+  Calcular Frete - ✔️
+  Enviar Produto - ✔️
+  Atualizar Status de Entrega - ✔️
+  📌 Relações:
+    "Acompanhar Pedido" se comunica com "Atualizar Status de Entrega"
+
+🔗 Relações no Diagrama
+  Inclusão (<<include>>) → Quando um caso de uso sempre depende de outro.
+
+  "Finalizar Compra" inclui "Escolher Forma de Pagamento"
+  "Finalizar Compra" inclui "Aplicar Cupom de Desconto"
+  Extensão (<<extend>>) → Quando um caso de uso pode ser opcional.
+  "Solicitar Troca/Devolução" pode estender "Acompanhar Pedido"
+  Associação (Linha Simples) → Relaciona um ator com um caso de uso
