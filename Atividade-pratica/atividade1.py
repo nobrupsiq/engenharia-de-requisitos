@@ -15,8 +15,7 @@ def adicionar_tarefa(tarefa):
     'concluida': 0
   }
   tarefas.append(item)
-
-
+  
 def listar_tarefas(lista):
   print('\n--- Lista de tarefas ---')
   if len(lista) > 0:
@@ -27,9 +26,9 @@ def listar_tarefas(lista):
 
 while True:
   print('\n1. Adicionar tarefa')
-  print('\n2. Concluir tarefa')
-  print('\n3. Listar tarefas')
-  print('\n0. Sair\n')
+  print('2. Concluir tarefa')
+  print('3. Listar tarefas')
+  print('0. Sair\n')
   opcao = input('Escolha uma opção: ')
 
   if opcao == '1':
@@ -45,8 +44,10 @@ while True:
     listar_tarefas(tarefas)
     concluir_tarefa = int(input('Digite o numero da tarefa a concluir: '))
   
+    # Esta variavel tem o -1 pq o indice da lista começa em 0 e não em 1
+    indice = concluir_tarefa -1
     if concluir_tarefa >= 1 and concluir_tarefa <= total_de_tarefas:
-      tarefas['concluida'] = 1 # PAREI AQUI, ESTA DANDO ERRO NESTA LINHA
+      tarefas[indice]['concluida'] = 1 
       print('Tarefa marcada como concluída!\n')
     else:
       print('Numero inválido!')
