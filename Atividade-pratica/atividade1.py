@@ -46,7 +46,7 @@ while True:
     concluir_tarefa = int(input('Digite o numero da tarefa a concluir: '))
   
     if concluir_tarefa >= 1 and concluir_tarefa <= total_de_tarefas:
-      tarefas['concluida'] = 1
+      tarefas['concluida'] = 1 # PAREI AQUI, ESTA DANDO ERRO NESTA LINHA
       print('Tarefa marcada como concluída!\n')
     else:
       print('Numero inválido!')
