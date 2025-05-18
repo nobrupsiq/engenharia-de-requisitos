@@ -19,7 +19,7 @@ class Atividade {
     }
 }
 
-public class SistemaAtividades {
+class SistemaAtividades {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Atividade> lista = new ArrayList<>();
@@ -67,5 +67,5 @@ public class SistemaAtividades {
         } while (opcao != 0);
 
         scanner.close();
-    }
+        }
 }
